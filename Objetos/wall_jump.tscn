@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpjc6y7c2n7qi"]
+
+[ext_resource type="Script" uid="uid://bo01oaqucoty" path="res://Scripts/wall_jump.gd" id="1_uehd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+
+[node name="Wall Jump" type="StaticBody2D" unique_id=8445682]
+script = ExtResource("1_uehd3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=954284377]
+shape = SubResource("RectangleShape2D_ebum8")

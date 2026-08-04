@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dsimjndiu0gxu"]
+
+[ext_resource type="PackedScene" uid="uid://c74wefs3dy85s" path="res://Atores/player.tscn" id="1_ssles"]
+[ext_resource type="PackedScene" uid="uid://cpjc6y7c2n7qi" path="res://Objetos/wall_jump.tscn" id="2_4uk6u"]
+[ext_resource type="PackedScene" uid="uid://3ls06hgopdi0" path="res://Atores/clone.tscn" id="3_32exs"]
+[ext_resource type="PackedScene" uid="uid://ycpemifdng5s" path="res://Objetos/button.tscn" id="4_upko5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(528, 20)
+
+[node name="Teste" type="Node2D" unique_id=2001333382]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1652312262]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=404752781]
+position = Vector2(537, 567)
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Player" parent="." unique_id=1653144747 instance=ExtResource("1_ssles")]
+position = Vector2(541, 364)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1047923049]
+position = Vector2(576, 324)
+
+[node name="Wall Jump" parent="." unique_id=8445682 instance=ExtResource("2_4uk6u")]
+position = Vector2(281, 483)
+scale = Vector2(1, 8.560002)
+
+[node name="Label" type="Label" parent="." unique_id=1581761130]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="." unique_id=941011864]
+offset_left = 741.0
+offset_top = 500.0
+offset_right = 781.0
+offset_bottom = 523.0
+horizontal_alignment = 1
+
+[node name="Clone" parent="." unique_id=800727665 instance=ExtResource("3_32exs")]
+position = Vector2(647, 498)
+
+[node name="Clone2" parent="." unique_id=531885286 instance=ExtResource("3_32exs")]
+position = Vector2(637, 488)
+
+[node name="Clone3" parent="." unique_id=282875201 instance=ExtResource("3_32exs")]
+position = Vector2(657, 488)
+
+[node name="Clone4" parent="." unique_id=1524351197 instance=ExtResource("3_32exs")]
+position = Vector2(657, 468)
+
+[node name="Clone5" parent="." unique_id=676241194 instance=ExtResource("3_32exs")]
+position = Vector2(647, 478)
+
+[node name="Clone6" parent="." unique_id=112543379 instance=ExtResource("3_32exs")]
+position = Vector2(637, 468)
+
+[node name="Button" parent="." unique_id=1077538592 instance=ExtResource("4_upko5")]
+position = Vector2(761, 537)
+
+[node name="Button2" parent="." unique_id=617611896 instance=ExtResource("4_upko5")]

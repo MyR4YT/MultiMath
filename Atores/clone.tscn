@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://3ls06hgopdi0"]
+
+[ext_resource type="Script" uid="uid://dpuaav52psgtr" path="res://Scripts/clone.gd" id="1_wrbaa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+
+[node name="Clone" type="Area2D" unique_id=800727665]
+script = ExtResource("1_wrbaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1802702359]
+shape = SubResource("RectangleShape2D_ebum8")
+debug_color = Color(0.9667905, 0, 0.48132145, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

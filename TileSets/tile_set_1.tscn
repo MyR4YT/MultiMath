@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b4ysqov5eb6ln"]
+
+[ext_resource type="Texture2D" uid="uid://d2bc4qptruufw" path="res://Assets/grass.png" id="1_8mn7y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mn7y"]
+texture = ExtResource("1_8mn7y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/custom_data_0 = true
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_ebum8"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Walljump"
+custom_data_layer_0/type = 1
+sources/1 = SubResource("TileSetAtlasSource_8mn7y")
+
+[node name="TileSet1" type="TileMapLayer" unique_id=877470913]
+scale = Vector2(1.5, 1.5)
+tile_set = SubResource("TileSet_ebum8")

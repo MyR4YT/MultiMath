@@ -1,30 +1,22 @@
-[gd_scene format=3 uid="uid://dsimjndiu0gxu"]
+[gd_scene format=4 uid="uid://dsimjndiu0gxu"]
 
 [ext_resource type="PackedScene" uid="uid://c74wefs3dy85s" path="res://Atores/player.tscn" id="1_ssles"]
-[ext_resource type="PackedScene" uid="uid://cpjc6y7c2n7qi" path="res://Objetos/wall_jump.tscn" id="2_4uk6u"]
 [ext_resource type="PackedScene" uid="uid://3ls06hgopdi0" path="res://Atores/clone.tscn" id="3_32exs"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="3_vxhr3"]
 [ext_resource type="PackedScene" uid="uid://ycpemifdng5s" path="res://Objetos/button.tscn" id="4_upko5"]
+[ext_resource type="PackedScene" uid="uid://b4ysqov5eb6ln" path="res://TileSets/tile_set_1.tscn" id="6_5cqpl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
-size = Vector2(528, 20)
+[sub_resource type="Gradient" id="Gradient_vxhr3"]
+offsets = PackedFloat32Array(0, 0.41133004, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.58866996, 1, 1, 1, 0)
 
 [node name="Teste" type="Node2D" unique_id=2001333382]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1652312262]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=404752781]
-position = Vector2(537, 567)
-shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="Player" parent="." unique_id=1653144747 instance=ExtResource("1_ssles")]
 position = Vector2(541, 364)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1047923049]
 position = Vector2(576, 324)
-
-[node name="Wall Jump" parent="." unique_id=8445682 instance=ExtResource("2_4uk6u")]
-position = Vector2(281, 483)
-scale = Vector2(1, 8.560002)
 
 [node name="Label" type="Label" parent="." unique_id=1581761130]
 offset_right = 40.0
@@ -35,6 +27,9 @@ offset_left = 741.0
 offset_top = 500.0
 offset_right = 781.0
 offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("3_vxhr3")
+theme_override_font_sizes/font_size = 24
+text = "1 x 2 = ?"
 horizontal_alignment = 1
 
 [node name="Clone" parent="." unique_id=800727665 instance=ExtResource("3_32exs")]
@@ -56,6 +51,17 @@ position = Vector2(647, 478)
 position = Vector2(637, 468)
 
 [node name="Button" parent="." unique_id=1077538592 instance=ExtResource("4_upko5")]
-position = Vector2(761, 537)
+position = Vector2(781, 544)
 
-[node name="Button2" parent="." unique_id=617611896 instance=ExtResource("4_upko5")]
+[node name="TileSet1" parent="." unique_id=877470913 instance=ExtResource("6_5cqpl")]
+tile_map_data = PackedByteArray("AAAFAAgAAQAEAAAAAAAFAAkAAQAEAAAAAAAFAAoAAQAEAAAAAAAFAAsAAQAEAAAAAAAFAAwAAQAAAAAAAAD8/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD+/wwAAQAAAAAAAAD//wwAAQAAAAAAAAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAAFAAcAAQAEAAAAAAAGAAwAAQAAAAAAAAAHAAwAAQAAAAAAAAAIAAwAAQAAAAAAAAAJAAwAAQAAAAAAAAAKAAwAAQAAAAAAAAALAAwAAQAAAAAAAAAMAAwAAQAAAAAAAAANAAwAAQAAAAAAAAAOAAwAAQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwAAQAAAAAAAAATAAwAAQAAAAAAAAAUAAwAAQAAAAAAAAAVAAwAAQAAAAAAAAAWAAwAAQAAAAAAAAAXAAwAAQAAAAAAAAAYAAwAAQAAAAAAAAAZAAwAAQAAAAAAAAAaAAwAAQAAAAAAAAAbAAwAAQAAAAAAAAAcAAwAAQAAAAAAAAAdAAwAAQAAAAAAAAAeAAwAAQAAAAAAAAAfAAwAAQAAAAAAAAA=")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1225606867]
+position = Vector2(607, 289)
+emission_shape = 3
+emission_rect_extents = Vector2(680, 320)
+gravity = Vector2(0, 0)
+initial_velocity_max = 7.94
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_vxhr3")

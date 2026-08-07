@@ -1,24 +1,30 @@
 [gd_scene format=3 uid="uid://ycpemifdng5s"]
 
 [ext_resource type="Script" uid="uid://cutt4w41824fb" path="res://Scripts/button.gd" id="1_gsb14"]
+[ext_resource type="Texture2D" uid="uid://c3e5verhq8llr" path="res://Assets/button.png" id="2_ln03h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(26, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf33"]
-size = Vector2(20, 10)
+size = Vector2(20, 3)
 
 [node name="Button" type="StaticBody2D" unique_id=1077538592]
+scale = Vector2(2, 2)
 script = ExtResource("1_gsb14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732223999]
-position = Vector2(0, 10)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1125781428]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2010631642]
-position = Vector2(0, -5)
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_xvf33")
 debug_color = Color(0.44211107, 0.59868383, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=740336995]
+texture = ExtResource("2_ln03h")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

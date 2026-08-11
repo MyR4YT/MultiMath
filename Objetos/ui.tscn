@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bwmdplv7it624"]
+
+[ext_resource type="Texture2D" uid="uid://clmf12buip08q" path="res://Assets/UI/LevelInd.png" id="1_pur2k"]
+[ext_resource type="Script" uid="uid://d08n0ubm8fx8" path="res://Scripts/ui.gd" id="1_vdm18"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_v7b1f"]
+
+[node name="UI" type="Control" unique_id=1472603814]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vdm18")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=49848530]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(20, 0)
+texture = ExtResource("1_pur2k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=570307010]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("2_v7b1f")
+theme_override_font_sizes/normal_font_size = 64
+text = "Bunny Hop:"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RichTextLabel" unique_id=1296865369]
+layout_mode = 0
+offset_left = -1.0000002
+offset_top = 57.0
+offset_right = 315.0
+offset_bottom = 203.0
+rotation = -0.10169184
+theme_override_fonts/normal_font = ExtResource("2_v7b1f")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "2"

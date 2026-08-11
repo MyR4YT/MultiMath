@@ -22,6 +22,14 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_w75uk")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x2ta"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vhnt"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ebum8"]
 animations = [{
 "frames": [{
@@ -40,6 +48,17 @@ animations = [{
 "loop": 1,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x2ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vhnt")
+}],
+"loop": 1,
+"name": &"walling",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1653144747]
@@ -52,5 +71,18 @@ shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339966065]
 sprite_frames = SubResource("SpriteFrames_ebum8")
+animation = &"walling"
 autoplay = "default"
-frame_progress = 0.0068936977
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=9702922]
+position = Vector2(0, 15.999999)
+emitting = false
+amount = 20
+emission_shape = 1
+emission_sphere_radius = 2.0
+direction = Vector2(-1, 0)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 2.5
+scale_amount_max = 2.5

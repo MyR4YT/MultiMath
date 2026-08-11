@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3ls06hgopdi0" path="res://Atores/clone.tscn" id="3_32exs"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="3_vxhr3"]
 [ext_resource type="PackedScene" uid="uid://ycpemifdng5s" path="res://Objetos/button.tscn" id="4_upko5"]
+[ext_resource type="PackedScene" uid="uid://bwmdplv7it624" path="res://Objetos/ui.tscn" id="6_1nq6b"]
 [ext_resource type="PackedScene" uid="uid://b4ysqov5eb6ln" path="res://TileSets/tile_set_1.tscn" id="6_5cqpl"]
 
 [sub_resource type="Gradient" id="Gradient_vxhr3"]
@@ -19,6 +20,7 @@ position = Vector2(541, 364)
 position = Vector2(576, 324)
 
 [node name="Label" type="Label" parent="." unique_id=1581761130]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -65,3 +67,7 @@ initial_velocity_max = 7.94
 scale_amount_min = 3.0
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_vxhr3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896062680]
+
+[node name="UI" parent="CanvasLayer" unique_id=1472603814 instance=ExtResource("6_1nq6b")]

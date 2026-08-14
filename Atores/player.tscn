@@ -22,6 +22,38 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_w75uk")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tccvy"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6qpu"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4h0u"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq51a"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3exnb"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ip3"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t82p2"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08b08"]
+atlas = ExtResource("2_w75uk")
+region = Rect2(224, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1x2ta"]
 atlas = ExtResource("2_w75uk")
 region = Rect2(0, 32, 32, 32)
@@ -51,6 +83,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tccvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6qpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4h0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq51a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3exnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73ip3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t82p2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08b08")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1x2ta")
 }, {
 "duration": 1.0,
@@ -71,8 +132,8 @@ shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339966065]
 sprite_frames = SubResource("SpriteFrames_ebum8")
-animation = &"walling"
 autoplay = "default"
+frame_progress = 0.6802988
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=9702922]
 position = Vector2(0, 15.999999)

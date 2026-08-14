@@ -1,11 +1,40 @@
 [gd_scene format=4 uid="uid://dsimjndiu0gxu"]
 
+[ext_resource type="Texture2D" uid="uid://o716k5mpptvc" path="res://Assets/Sky.png" id="1_1nq6b"]
 [ext_resource type="PackedScene" uid="uid://c74wefs3dy85s" path="res://Atores/player.tscn" id="1_ssles"]
 [ext_resource type="PackedScene" uid="uid://3ls06hgopdi0" path="res://Atores/clone.tscn" id="3_32exs"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="3_vxhr3"]
 [ext_resource type="PackedScene" uid="uid://ycpemifdng5s" path="res://Objetos/button.tscn" id="4_upko5"]
 [ext_resource type="PackedScene" uid="uid://bwmdplv7it624" path="res://Objetos/ui.tscn" id="6_1nq6b"]
 [ext_resource type="PackedScene" uid="uid://b4ysqov5eb6ln" path="res://TileSets/tile_set_1.tscn" id="6_5cqpl"]
+[ext_resource type="Texture2D" uid="uid://d2bc4qptruufw" path="res://Assets/grass.png" id="7_kib8y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kib8y"]
+texture = ExtResource("7_kib8y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/custom_data_0 = true
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/custom_data_0 = true
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_1nq6b"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "Walljump"
+custom_data_layer_0/type = 1
+sources/1 = SubResource("TileSetAtlasSource_kib8y")
 
 [sub_resource type="Gradient" id="Gradient_vxhr3"]
 offsets = PackedFloat32Array(0, 0.41133004, 1)
@@ -13,8 +42,13 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.58866996, 1, 1, 1, 0)
 
 [node name="Teste" type="Node2D" unique_id=2001333382]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=912721092]
+position = Vector2(580, 320)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("1_1nq6b")
+
 [node name="Player" parent="." unique_id=1653144747 instance=ExtResource("1_ssles")]
-position = Vector2(541, 364)
+position = Vector2(96.00009, 514)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1047923049]
 position = Vector2(576, 324)
@@ -53,10 +87,11 @@ position = Vector2(647, 478)
 position = Vector2(637, 468)
 
 [node name="Button" parent="." unique_id=1077538592 instance=ExtResource("4_upko5")]
-position = Vector2(781, 544)
+position = Vector2(926, 454)
 
 [node name="TileSet1" parent="." unique_id=877470913 instance=ExtResource("6_5cqpl")]
-tile_map_data = PackedByteArray("AAAFAAgAAQAEAAAAAAAFAAkAAQAEAAAAAAAFAAoAAQAEAAAAAAAFAAsAAQAEAAAAAAAFAAwAAQAAAAAAAAD8/wwAAQAAAAAAAAD9/wwAAQAAAAAAAAD+/wwAAQAAAAAAAAD//wwAAQAAAAAAAAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAAFAAcAAQAEAAAAAAAGAAwAAQAAAAAAAAAHAAwAAQAAAAAAAAAIAAwAAQAAAAAAAAAJAAwAAQAAAAAAAAAKAAwAAQAAAAAAAAALAAwAAQAAAAAAAAAMAAwAAQAAAAAAAAANAAwAAQAAAAAAAAAOAAwAAQAAAAAAAAAPAAwAAQAAAAAAAAAQAAwAAQAAAAAAAAARAAwAAQAAAAAAAAASAAwAAQAAAAAAAAATAAwAAQAAAAAAAAAUAAwAAQAAAAAAAAAVAAwAAQAAAAAAAAAWAAwAAQAAAAAAAAAXAAwAAQAAAAAAAAAYAAwAAQAAAAAAAAAZAAwAAQAAAAAAAAAaAAwAAQAAAAAAAAAbAAwAAQAAAAAAAAAcAAwAAQAAAAAAAAAdAAwAAQAAAAAAAAAeAAwAAQAAAAAAAAAfAAwAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAAAAA0AAQAAAAEAAAABAA0AAQAAAAEAAAACAA0AAQAAAAEAAAADAA0AAQAAAAEAAAAEAA0AAQAAAAEAAAAPAAoAAQABAAAAAAAPAAsAAQABAAAAAAAPAAwAAQABAAAAAAAQAAoAAQAEAAAAAAAQAAsAAQAEAAAAAAAQAAwAAQAEAAAAAAA=")
+tile_set = SubResource("TileSet_1nq6b")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1225606867]
 position = Vector2(607, 289)

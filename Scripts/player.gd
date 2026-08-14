@@ -44,10 +44,12 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		anim.play("walking")
 		anim.flip_h = velocity.x < 0
 		particles.emitting = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		anim.play("default")
 		particles.emitting = false
 		
 	if not is_on_floor() and not wall_grabbing:
@@ -65,7 +67,6 @@ func _physics_process(delta: float) -> void:
 			anim.play("default")
 	else:
 		wall_grabbing = false
-		anim.play("default")
 
 	if wall_grabbing and Input.is_action_just_pressed("ui_accept"):
 		var wall_normal = get_wall_normal().x

@@ -15,6 +15,10 @@ run/main_scene="uid://dsimjndiu0gxu"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bbpopn54n4ywe"
+
 [display]
 
 window/size/borderless=true

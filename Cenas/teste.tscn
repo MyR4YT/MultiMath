@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bwmdplv7it624" path="res://Objetos/ui.tscn" id="6_1nq6b"]
 [ext_resource type="PackedScene" uid="uid://b4ysqov5eb6ln" path="res://TileSets/tile_set_1.tscn" id="6_5cqpl"]
 [ext_resource type="Texture2D" uid="uid://d2bc4qptruufw" path="res://Assets/grass.png" id="7_kib8y"]
+[ext_resource type="PackedScene" uid="uid://rwqcw37y27ob" path="res://Objetos/Coin.tscn" id="9_e44ki"]
+
+[sub_resource type="Gradient" id="Gradient_vxhr3"]
+offsets = PackedFloat32Array(0, 0.41133004, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.58866996, 1, 1, 1, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kib8y"]
 texture = ExtResource("7_kib8y")
@@ -28,6 +33,14 @@ texture_region_size = Vector2i(32, 32)
 4:0/0/custom_data_0 = true
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0/custom_data_0 = true
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1nq6b"]
 tile_size = Vector2i(32, 32)
@@ -36,16 +49,24 @@ custom_data_layer_0/name = "Walljump"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_kib8y")
 
-[sub_resource type="Gradient" id="Gradient_vxhr3"]
-offsets = PackedFloat32Array(0, 0.41133004, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.58866996, 1, 1, 1, 0)
-
 [node name="Teste" type="Node2D" unique_id=2001333382]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=912721092]
 position = Vector2(580, 320)
 scale = Vector2(3.7, 3.7)
 texture = ExtResource("1_1nq6b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D" unique_id=1225606867]
+position = Vector2(7.2973022, -8.37838)
+scale = Vector2(0.27027026, 0.27027026)
+amount = 20
+emission_shape = 3
+emission_rect_extents = Vector2(680, 320)
+gravity = Vector2(0, 0)
+initial_velocity_max = 7.94
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_vxhr3")
 
 [node name="Player" parent="." unique_id=1653144747 instance=ExtResource("1_ssles")]
 position = Vector2(96.00009, 514)
@@ -58,51 +79,98 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Label2" type="Label" parent="." unique_id=941011864]
-offset_left = 741.0
-offset_top = 500.0
-offset_right = 781.0
-offset_bottom = 523.0
-theme_override_fonts/font = ExtResource("3_vxhr3")
-theme_override_font_sizes/font_size = 24
-text = "1 x 2 = ?"
-horizontal_alignment = 1
-
 [node name="Clone" parent="." unique_id=800727665 instance=ExtResource("3_32exs")]
-position = Vector2(647, 498)
+position = Vector2(867, 585)
 
-[node name="Clone2" parent="." unique_id=531885286 instance=ExtResource("3_32exs")]
-position = Vector2(637, 488)
-
-[node name="Clone3" parent="." unique_id=282875201 instance=ExtResource("3_32exs")]
-position = Vector2(657, 488)
-
-[node name="Clone4" parent="." unique_id=1524351197 instance=ExtResource("3_32exs")]
-position = Vector2(657, 468)
-
-[node name="Clone5" parent="." unique_id=676241194 instance=ExtResource("3_32exs")]
-position = Vector2(647, 478)
-
-[node name="Clone6" parent="." unique_id=112543379 instance=ExtResource("3_32exs")]
-position = Vector2(637, 468)
+[node name="Clone2" parent="." unique_id=871084056 instance=ExtResource("3_32exs")]
+position = Vector2(1141, 393)
 
 [node name="Button" parent="." unique_id=1077538592 instance=ExtResource("4_upko5")]
-position = Vector2(926, 454)
+position = Vector2(897, 400)
+
+[node name="Label2" type="Label" parent="." unique_id=941011864]
+offset_left = 859.0
+offset_top = 386.0
+offset_right = 934.0
+offset_bottom = 409.0
+theme_override_fonts/font = ExtResource("3_vxhr3")
+theme_override_font_sizes/font_size = 24
+text = "2 + ? = 4"
+horizontal_alignment = 1
 
 [node name="TileSet1" parent="." unique_id=877470913 instance=ExtResource("6_5cqpl")]
-tile_map_data = PackedByteArray("AAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwAAQAAAAAAAAAAAA0AAQAAAAEAAAABAA0AAQAAAAEAAAACAA0AAQAAAAEAAAADAA0AAQAAAAEAAAAEAA0AAQAAAAEAAAAPAAoAAQABAAAAAAAPAAsAAQABAAAAAAAPAAwAAQABAAAAAAAQAAoAAQAEAAAAAAAQAAsAAQAEAAAAAAAQAAwAAQAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAQAAAAAAAAABAAwAAQAAAAAAAAACAAwAAQAAAAAAAAADAAwAAQAAAAAAAAAEAAwAAQAEAAEAABAAAA0AAQAAAAEAAAABAA0AAQAAAAEAAAACAA0AAQAAAAEAAAADAA0AAQAAAAEAAAAEAA0AAQAAAAAAAFAPAAoAAQABAAAAAAAPAAsAAQABAAAAAAAQAAoAAQAEAAAAAAAQAAsAAQAEAAAAAAAAAAAAAQACAAEAAAABAAAAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAFAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQAAAAEAACAJAAAAAQAAAAEAACAKAAAAAQAAAAEAACAHAAEAAQAAAAEAACAGAAEAAQAAAAEAACAFAAIAAQAAAAEAACAEAAIAAQAAAAEAACADAAMAAQAAAAEAACACAAMAAQAAAAEAACABAAQAAQAAAAEAACAAAAQAAQAAAAEAACACAAIAAQACAAEAAAACAAEAAQACAAEAAAABAAEAAQACAAEAAAAAAAEAAQACAAEAAAAAAAMAAQACAAEAAAABAAMAAQACAAEAAAABAAIAAQACAAEAAAADAAEAAQACAAEAAAADAAIAAQACAAEAAAAEAAEAAQACAAEAAAAFAAEAAQACAAEAAAALAAAAAQAAAAEAACAMAAAAAQAAAAEAACANAAAAAQAAAAEAACAOAAAAAQAAAAEAACAPAAAAAQAAAAEAACAQAAAAAQAAAAEAACARAAAAAQAAAAEAACASAAAAAQAAAAEAACATAAAAAQAAAAEAACAUAAAAAQAAAAEAACAVAAAAAQAAAAEAACAWAAAAAQAAAAEAACAXAAAAAQAAAAEAACAPAAkAAQADAAEAAAAQAAkAAQAAAAAAAAARAAkAAQAAAAAAAAASAAkAAQAAAAAAAAATAAkAAQAAAAAAAAAWAAkAAQADAAEAAAAXAAkAAQAAAAAAAAAYAAkAAQAAAAAAAAAPAA0AAQAAAAAAAAAQAA0AAQAAAAAAAAARAA0AAQAAAAAAAAASAA0AAQAAAAAAAAATAA0AAQAAAAAAAAAUAA0AAQAAAAAAAAAVAA0AAQAAAAAAAAAWAA0AAQAAAAAAAAAXAA0AAQAAAAAAAAAYAA0AAQAAAAAAAAAWAAoAAQABAAAAAAAWAAsAAQABAAAAAAAWAAwAAQABAAAAAAAXAAoAAQABAAEAAAAYAAoAAQABAAEAAAAXAAsAAQABAAEAAAAYAAwAAQABAAEAAAAXAAwAAQABAAEAAAAYAAsAAQABAAEAAAAPAAwAAQABAAAAAAAQAAwAAQAEAAAAAAAAAAIAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_1nq6b")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1225606867]
-position = Vector2(607, 289)
-emission_shape = 3
-emission_rect_extents = Vector2(680, 320)
-gravity = Vector2(0, 0)
-initial_velocity_max = 7.94
-scale_amount_min = 3.0
-scale_amount_max = 3.0
-color_ramp = SubResource("Gradient_vxhr3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896062680]
 
 [node name="UI" parent="CanvasLayer" unique_id=1472603814 instance=ExtResource("6_1nq6b")]
+
+[node name="Area2D" parent="." unique_id=632072251 instance=ExtResource("9_e44ki")]
+position = Vector2(200.00002, 552)
+
+[node name="Area2D2" parent="." unique_id=1830123206 instance=ExtResource("9_e44ki")]
+position = Vector2(176, 552.00006)
+
+[node name="Area2D3" parent="." unique_id=780190427 instance=ExtResource("9_e44ki")]
+position = Vector2(152, 552.00006)
+
+[node name="Area2D4" parent="." unique_id=360004332 instance=ExtResource("9_e44ki")]
+position = Vector2(224, 528)
+
+[node name="Area2D5" parent="." unique_id=1226004100 instance=ExtResource("9_e44ki")]
+position = Vector2(247.99998, 504)
+
+[node name="Area2D6" parent="." unique_id=413209988 instance=ExtResource("9_e44ki")]
+position = Vector2(272, 480)
+
+[node name="Area2D7" parent="." unique_id=196605554 instance=ExtResource("9_e44ki")]
+position = Vector2(296.00003, 480)
+
+[node name="Area2D8" parent="." unique_id=1739788642 instance=ExtResource("9_e44ki")]
+position = Vector2(320, 456)
+
+[node name="Area2D9" parent="." unique_id=1398930497 instance=ExtResource("9_e44ki")]
+position = Vector2(344, 456.00003)
+
+[node name="Area2D10" parent="." unique_id=1223531303 instance=ExtResource("9_e44ki")]
+position = Vector2(368, 456)
+
+[node name="Area2D11" parent="." unique_id=1770531760 instance=ExtResource("9_e44ki")]
+position = Vector2(392.00003, 432.00003)
+
+[node name="Area2D12" parent="." unique_id=1897515719 instance=ExtResource("9_e44ki")]
+position = Vector2(416, 432)
+
+[node name="Area2D13" parent="." unique_id=128144438 instance=ExtResource("9_e44ki")]
+position = Vector2(440.00003, 432)
+
+[node name="Area2D14" parent="." unique_id=2104764342 instance=ExtResource("9_e44ki")]
+position = Vector2(464, 432)
+
+[node name="Area2D15" parent="." unique_id=653625966 instance=ExtResource("9_e44ki")]
+position = Vector2(704, 608)
+
+[node name="Area2D16" parent="." unique_id=1313284641 instance=ExtResource("9_e44ki")]
+position = Vector2(704, 576)
+
+[node name="Area2D17" parent="." unique_id=1371894427 instance=ExtResource("9_e44ki")]
+position = Vector2(704, 544)
+
+[node name="Area2D18" parent="." unique_id=969470213 instance=ExtResource("9_e44ki")]
+position = Vector2(704, 512.00006)
+
+[node name="Area2D19" parent="." unique_id=624624894 instance=ExtResource("9_e44ki")]
+position = Vector2(704, 480.00006)
+
+[node name="Area2D20" parent="." unique_id=1460963301 instance=ExtResource("9_e44ki")]
+position = Vector2(992, 608)
+
+[node name="Area2D21" parent="." unique_id=293180727 instance=ExtResource("9_e44ki")]
+position = Vector2(968.00006, 608)
+
+[node name="Area2D22" parent="." unique_id=1102176695 instance=ExtResource("9_e44ki")]
+position = Vector2(944, 608)
+
+[node name="Area2D23" parent="." unique_id=934407964 instance=ExtResource("9_e44ki")]
+position = Vector2(920, 608)

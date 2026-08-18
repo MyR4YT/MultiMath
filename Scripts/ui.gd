@@ -22,3 +22,5 @@ func _process(delta: float) -> void:
 		text.text = "[wave]" + "1.25x"
 	else:
 		text.text = ""
+		
+	$RichTextLabel2.text = "Coins: " + str(Global.coins)

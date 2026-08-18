@@ -3,9 +3,6 @@ extends StaticBody2D
 var numbers = 0
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$"../Label2".text = "3 x 2 = " + str(numbers)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,5 +22,5 @@ func addnum():
 	var pos = $"../Label2".position.y
 	tween.tween_property($"../Label2", "position:y", pos -10, 0.1)
 	numbers += 1
-	$"../Label2".text = "3 x 2 = " + str(numbers)
+	$"../Label2".text = "2 + " +  str(numbers) + " = 4"
 	tween.tween_property($"../Label2", "position:y", pos, 0.1)

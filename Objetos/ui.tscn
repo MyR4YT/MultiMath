@@ -3,6 +3,50 @@
 [ext_resource type="Texture2D" uid="uid://clmf12buip08q" path="res://Assets/UI/LevelInd.png" id="1_pur2k"]
 [ext_resource type="Script" uid="uid://d08n0ubm8fx8" path="res://Scripts/ui.gd" id="1_vdm18"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_v7b1f"]
+[ext_resource type="Texture2D" uid="uid://bp3i5cqwg4lc3" path="res://Assets/Coin.png" id="4_mm5bc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmip6"]
+atlas = ExtResource("4_mm5bc")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khhpm"]
+atlas = ExtResource("4_mm5bc")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8tis"]
+atlas = ExtResource("4_mm5bc")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yl8h"]
+atlas = ExtResource("4_mm5bc")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1nb0"]
+atlas = ExtResource("4_mm5bc")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4md1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmip6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khhpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8tis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yl8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1nb0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="UI" type="Control" unique_id=1472603814]
 layout_mode = 3
@@ -18,9 +62,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -19.999939
+offset_top = -19.999998
+offset_right = 20.000061
+offset_bottom = 20.000002
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 pivot_offset = Vector2(20, 0)
@@ -46,3 +91,20 @@ theme_override_fonts/normal_font = ExtResource("2_v7b1f")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "2"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1975864588]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 1.0
+offset_right = 1298.0
+offset_bottom = 136.0
+theme_override_fonts/normal_font = ExtResource("2_v7b1f")
+theme_override_font_sizes/normal_font_size = 32
+text = "Coins: 0"
+scroll_active = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110321321]
+position = Vector2(1045, 17)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_o4md1")
+autoplay = "default"

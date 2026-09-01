@@ -24,6 +24,7 @@ Global="*uid://bbpopn54n4ywe"
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/snap/snap_2d_transforms_to_pixel=false
 
 [physics]
 

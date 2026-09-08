@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c2kkgh4hkncf0"]
+
+[ext_resource type="Texture2D" uid="uid://d2bc4qptruufw" path="res://Assets/grass.png" id="1_tq6fc"]
+[ext_resource type="Script" uid="uid://bxe25sbfu2umy" path="res://Scripts/wall.gd" id="1_x53re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(33.333336, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebum8"]
+atlas = ExtResource("1_tq6fc")
+region = Rect2(96, 64, 33, 32)
+
+[node name="Wall" type="StaticBody2D" unique_id=615533191]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_x53re")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698301465]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=795196880]
+texture = SubResource("AtlasTexture_ebum8")

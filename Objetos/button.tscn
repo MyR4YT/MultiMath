@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cutt4w41824fb" path="res://Scripts/button.gd" id="1_gsb14"]
 [ext_resource type="Texture2D" uid="uid://c3e5verhq8llr" path="res://Assets/button.png" id="2_ln03h"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="3_5f4on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(26, 4)
@@ -26,5 +27,15 @@ debug_color = Color(0.44211107, 0.59868383, 0, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=740336995]
 texture = ExtResource("2_ln03h")
+
+[node name="Label2" type="Label" parent="." unique_id=1145917845]
+offset_left = -36.5
+offset_top = -20.0
+offset_right = 38.5
+offset_bottom = 3.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_5f4on")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

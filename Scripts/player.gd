@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		coyote_counter -= delta  # Diminui o tempo fora do chão
 		await get_tree().create_timer(0.016).timeout
-		if not is_on_floor() and not wall_grabbing and (Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")):
+		if not is_on_floor() and not wall_grabbing:
 			if SPEED <= 800:
 				SPEED += 1.5
 		else:

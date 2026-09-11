@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf33"]
-size = Vector2(6.5, 8)
+size = Vector2(6.2, 8)
 
 [node name="Area2D" type="Area2D" unique_id=632072251]
 scale = Vector2(2.5, 2.5)
@@ -59,7 +59,8 @@ autoplay = "default"
 frame_progress = 0.6712264
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056578878]
-position = Vector2(-0.25, 0)
+position = Vector2(-0.09999989, 0)
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_xvf33")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

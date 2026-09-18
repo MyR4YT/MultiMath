@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bc54ihin27680"]
+
+[ext_resource type="Shader" uid="uid://dvroapyfctu5b" path="res://Shaders/transition.gdshader" id="1_xb0ik"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebum8"]
+shader = ExtResource("1_xb0ik")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 40.0
+
+[sub_resource type="Animation" id="Animation_7ra48"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hl242"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3gx1l"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbdqs"]
+_data = {
+&"RESET": SubResource("Animation_7ra48"),
+&"fade_in": SubResource("Animation_hl242"),
+&"fade_out": SubResource("Animation_3gx1l")
+}
+
+[node name="Transition" type="CanvasLayer" unique_id=633851699]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1332659179]
+material = SubResource("ShaderMaterial_ebum8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2082822619]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_dbdqs")
+autoplay = &"fade_in"

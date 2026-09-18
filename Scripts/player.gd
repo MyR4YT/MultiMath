@@ -15,6 +15,8 @@ var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var wall_grabbing = false
 
+var floor = 0
+var air = 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,14 +32,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		coyote_counter = coyote_time  # Reseta o tempo quando está no chão
 	
-	if is_on_floor(): 
+	if is_on_floor(): # Achata na aterrisagem
 		reset_timer()
+		if air == 1:
+			air = 0
+			floor = 0
+		if floor == 0:
+			floor = 1
+			apply_squash_stretch(Vector2(1.3, 0.7))
 
 	# Handle jump.
 	if Input.is_action_pressed("ui_accept"):
 		if is_on_floor() or Input.is_action_just_pressed("ui_accept") and wall_grabbing or coyote_counter > 0.0:
 			velocity.y = JUMP_VELOCITY
+			apply_squash_stretch(Vector2(0.7, 1.3))
 			coyote_counter = 0.0
+			air = 1
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -107,3 +117,17 @@ func reset_timer():
 	await get_tree().create_timer(0.16).timeout
 	if is_on_floor():
 		SPEED = 300.0
+var anima = false
+func apply_squash_stretch(target_scale: Vector2) -> void:
+	if anima == true: return
+	anima = true
+	# Define a escala inicial exagerada/modificada
+	anim.scale = target_scale
+	
+	# Cria a interpolação suave de volta ao tamanho normal (1, 1)
+	var tween = create_tween()
+	tween.tween_property(anim, "scale", Vector2.ONE, 0.15)\
+		 .set_trans(Tween.TRANS_QUAD)\
+		 .set_ease(Tween.EASE_OUT)
+	await tween.finished
+	anima = false

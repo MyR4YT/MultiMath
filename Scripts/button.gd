@@ -42,6 +42,7 @@ func addnum() -> void:
 	tween.tween_property($"Label2", "position:y", pos, 0.1)
 	if numbers == _valor_esperado():
 		Global.active = id
+		print(id)
 
 
 func _simbolo() -> String:
@@ -58,24 +59,25 @@ func _simbolo() -> String:
 
 
 # Valor que o número faltante deve ter para a conta bater
+# Valor que o número faltante deve ter para a conta bater
 func _valor_esperado() -> int:
 	match faltante:
 		Faltante.PRIMEIRO:
 			match operacao:
 				Operacao.SOMA:
-					return num2 - num1 # ? + num1... na verdade ? = resultado - outro
+					return num1 - num2 # Ex: ? + 3 = 6 -> ? = 6 - 3 = 3
 				Operacao.SUBTRACAO:
-					return 0
+					return num1 + num2 # Ex: ? - 3 = 6 -> ? = 6 + 3 = 9
 				Operacao.MULTIPLICACAO:
-					return 0
+					return 0 if num2 == 0 else num1 / num2 # Ex: ? * 3 = 6 -> ? = 6 / 3 = 2
 				Operacao.DIVISAO:
-					return 0
+					return num1 * num2 # Ex: ? / 3 = 6 -> ? = 6 * 3 = 18
 		Faltante.SEGUNDO:
 			match operacao:
 				Operacao.SOMA:
-					return num2 - num1
+					return num2 - num1 # Ex: 3 + ? = 6 -> ? = 6 - 3 = 3
 				Operacao.SUBTRACAO:
-					return num1 - num2
+					return num1 - num2 # Ex: 6 - ? = 3 -> ? = 6 - 3 = 3
 				Operacao.MULTIPLICACAO:
 					return 0 if num1 == 0 else num2 / num1
 				Operacao.DIVISAO:

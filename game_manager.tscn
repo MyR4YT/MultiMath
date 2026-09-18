@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://v7hdd5558a0u"]
+
+[ext_resource type="Script" uid="uid://bveqxhwubbyy4" path="res://game_manager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://bc54ihin27680" path="res://Cenas/transition.tscn" id="2_smx3j"]
+[ext_resource type="Shader" uid="uid://dvroapyfctu5b" path="res://Shaders/transition.gdshader" id="3_o2178"]
+
+[sub_resource type="Animation" id="Animation_7ra48"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hl242"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3gx1l"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dbdqs"]
+_data = {
+&"RESET": SubResource("Animation_7ra48"),
+&"fade_in": SubResource("Animation_hl242"),
+&"fade_out": SubResource("Animation_3gx1l")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebum8"]
+shader = ExtResource("3_o2178")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 40.0
+
+[node name="Game Manager" type="Node" unique_id=392648878]
+script = ExtResource("1_70yv6")
+
+[node name="Transition" parent="." unique_id=633851699 instance=ExtResource("2_smx3j")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Transition" unique_id=1634287459]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_dbdqs")
+
+[node name="ColorRect2" type="ColorRect" parent="Transition" unique_id=1990604586]
+material = SubResource("ShaderMaterial_ebum8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[editable path="Transition"]

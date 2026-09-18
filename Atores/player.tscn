@@ -131,9 +131,11 @@ position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339966065]
+position = Vector2(0, 15.999999)
 sprite_frames = SubResource("SpriteFrames_ebum8")
 autoplay = "default"
 frame_progress = 0.6802988
+offset = Vector2(0, -15.999999)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=9702922]
 position = Vector2(0, 15.999999)

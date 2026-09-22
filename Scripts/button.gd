@@ -26,23 +26,46 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not body.clones.is_empty() and cu:
 		cu = false
 		for i in body.clones:
-			addnum()
+			# Passamos a referência do player para poder matar caso passe da contagem
+			var passou = addnum(body)
 			i.queue_free()
+			
+			# Se passou da resposta, interrompe a absorção de clones imediatamente
+			if passou:
+				break
+				
 			await get_tree().create_timer(0.3).timeout
+			
 		body.clones.clear()
 		cu = true
 
 
-func addnum() -> void:
+func addnum(player: Node2D) -> bool:
 	var tween = create_tween()
 	var pos = $Label2.position.y
 	tween.tween_property($"Label2", "position:y", pos - 10, 0.1)
 	numbers += 1
 	$"Label2".text = _montar_equacao()
 	tween.tween_property($"Label2", "position:y", pos, 0.1)
-	if numbers == _valor_esperado():
+	
+	var alvo = _valor_esperado()
+	
+	# Se passar do número esperado, ele morre e não libera
+	if numbers > alvo:
+		if player.has_method("die"):
+			player.die()
+		elif player.has_method("kill"):
+			player.kill()
+		else:
+			Global.death = true # Fallback padrão caso não haja método de morte específico
+		return true
+		
+	# Libera apenas se for o valor exato
+	if numbers == alvo:
 		Global.active = id
 		print(id)
+		
+	return false
 
 
 func _simbolo() -> String:
@@ -58,8 +81,6 @@ func _simbolo() -> String:
 	return "?"
 
 
-# Valor que o número faltante deve ter para a conta bater
-# Valor que o número faltante deve ter para a conta bater
 func _valor_esperado() -> int:
 	match faltante:
 		Faltante.PRIMEIRO:

@@ -97,6 +97,10 @@ func _physics_process(delta: float) -> void:
 	if position_history.size() > max_history_needed:
 		position_history.pop_back()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_down"):
+		apply_squash_stretch(Vector2(1.5, 0.5))
+
 func is_on_valid_wall_tile() -> bool:
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

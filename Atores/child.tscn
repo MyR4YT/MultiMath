@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b2wok7vjbbsj4"]
+
+[ext_resource type="Texture2D" uid="uid://dtlccuvgrkc33" path="res://Assets/child.png" id="1_gkgog"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_u48sd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u48sd"]
+atlas = ExtResource("1_gkgog")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdmqv"]
+atlas = ExtResource("1_gkgog")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebum8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u48sd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdmqv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(16, 18)
+
+[node name="Child" type="Area2D" unique_id=656766011]
+scale = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=371630018]
+position = Vector2(0, -6.3999996)
+sprite_frames = SubResource("SpriteFrames_ebum8")
+autoplay = "default"
+frame_progress = 0.22419931
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781445034]
+position = Vector2(0, 2.842171e-14)
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Label2" type="RichTextLabel" parent="." unique_id=1626138361]
+offset_left = -41.6
+offset_top = -25.6
+offset_right = 130.4
+offset_bottom = 19.4
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("2_u48sd")
+bbcode_enabled = true
+text = "[wave]Segure o pulo para
+acumular velocidade!"
+horizontal_alignment = 1

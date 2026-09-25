@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var delay_frames: int = 30 
 @export var coyote_time: float = 0.15
-@onready var tile_map: TileMapLayer = $"../TileSet1"
+@onready var tile_map: TileMapLayer = $"../Normal"
 @export var wall_jump_force_x := 300.0
 @export var wall_jump_force_y := -400.0
 var coyote_counter: float = 0.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doupvon0bhnin"]
 
 [ext_resource type="Shader" uid="uid://rhv410y6yum0" path="res://Shaders/background.gdshader" id="1_pveh2"]
+[ext_resource type="Script" uid="uid://bimfvcnjx2tdi" path="res://Scripts/menu.gd" id="1_vpgfy"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_u1n12"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebum8"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vpgfy")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1293881046]
 material = SubResource("ShaderMaterial_ebum8")

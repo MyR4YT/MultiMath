@@ -62,7 +62,8 @@ offset_right = 235.0
 offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("2_v7b1f")
 theme_override_font_sizes/normal_font_size = 64
-text = "Bunny Hop:"
+bbcode_enabled = true
+text = "[rainbow sat=10 val=1]Speed:"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RichTextLabel" unique_id=1296865369]

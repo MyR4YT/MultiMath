@@ -39,6 +39,8 @@ func _process(delta: float) -> void:
 func start_round() -> void:
 	if current_round > max_rounds:
 		equation_label.text = "Fim do Jogo!\nObrigado por Jogar!\n Moedas: " + str(Global.coins) + "\nMaçãs: " + str(Global.macas)
+		$Label2.cronometro_ativo = false
+		$Label2.show()
 		return
 		
 	# Reseta os visuais ou estados dos labels se necessário

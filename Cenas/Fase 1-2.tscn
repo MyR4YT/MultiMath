@@ -15,12 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://bc54ihin27680" path="res://Cenas/transition.tscn" id="12_65u2y"]
 [ext_resource type="Shader" uid="uid://slnt4lrda0v6" path="res://Shaders/vignette.gdshader" id="12_atcdw"]
 [ext_resource type="PackedScene" uid="uid://c2kkgh4hkncf0" path="res://Objetos/wall.tscn" id="14_eiu7s"]
+[ext_resource type="PackedScene" uid="uid://boii5uhr4qtrr" path="res://Cenas/pause.tscn" id="15_apdad"]
 [ext_resource type="PackedScene" uid="uid://ho8yf3ovfjji" path="res://Objetos/apple.tscn" id="15_qbfi7"]
 [ext_resource type="Script" uid="uid://cfwk1ep54ds0w" path="res://Scripts/void.gd" id="16_hp0yw"]
 [ext_resource type="Script" uid="uid://sqcrmrotwnhu" path="res://Scripts/audio_stream_player.gd" id="17_x2cyj"]
 [ext_resource type="PackedScene" uid="uid://b2wok7vjbbsj4" path="res://Atores/child.tscn" id="19_x2cyj"]
 [ext_resource type="PackedScene" uid="uid://bsaseeho83xpq" path="res://Objetos/ball_spawner.tscn" id="20_5vbna"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="21_rl0sc"]
+[ext_resource type="Script" uid="uid://cwugmtgy6tsm0" path="res://Cenas/label_2.gd" id="22_ilwds"]
 
 [sub_resource type="Gradient" id="Gradient_8vnu0"]
 offsets = PackedFloat32Array(0, 0.5588235, 1)
@@ -53,22 +55,28 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
+1:0/0/terrain = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/terrain = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:0/0/custom_data_0 = true
 3:0/0 = 0
+3:0/0/terrain = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0/custom_data_0 = true
 4:0/0 = 0
+4:0/0/terrain = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:0/0/custom_data_0 = true
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
+1:1/0/terrain = 0
 2:1/0 = 0
 3:1/0 = 0
+3:1/0/terrain = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:1/0/custom_data_0 = true
 4:1/0 = 0
@@ -185,6 +193,7 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="Camera2D/Control" unique_id=722674184]
 layout_mode = 1
@@ -193,6 +202,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Camera2D/Control/Control" unique_id=397759156]
 material = SubResource("ShaderMaterial_ebum8")
@@ -204,6 +214,7 @@ offset_right = 1152.0
 offset_bottom = 672.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=1581761130]
 visible = false
@@ -328,8 +339,16 @@ tile_set = SubResource("TileSet_1nq6b")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896062680]
 
 [node name="UI" parent="CanvasLayer" unique_id=1472603814 instance=ExtResource("8_hp0yw")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Transition" parent="CanvasLayer" unique_id=633851699 instance=ExtResource("12_65u2y")]
+
+[node name="ColorRect" parent="CanvasLayer/Transition" index="0" unique_id=1332659179]
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause" parent="CanvasLayer" unique_id=1705199547 instance=ExtResource("15_apdad")]
+visible = false
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=675265289]
 position = Vector2(200.00002, 552)
@@ -841,6 +860,7 @@ text = "[wave]Segure o pulo para
 acumular velocidade!"
 scroll_active = false
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="1" type="RichTextLabel" parent="." unique_id=245801044]
 offset_left = 5840.0
@@ -855,6 +875,7 @@ text = "1
 "
 scroll_active = false
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="2" type="RichTextLabel" parent="." unique_id=852570004]
 offset_left = 6224.0
@@ -869,6 +890,7 @@ text = "2
 "
 scroll_active = false
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="3" type="RichTextLabel" parent="." unique_id=422439868]
 offset_left = 6608.0
@@ -882,6 +904,15 @@ bbcode_enabled = true
 text = "3"
 scroll_active = false
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=1138206821]
+visible = false
+offset_left = 6324.0
+offset_top = 493.0
+offset_right = 6364.0
+offset_bottom = 516.0
+script = ExtResource("22_ilwds")
 
 [connection signal="body_entered" from="Node2D3/Void 1" to="Node2D3/Void 1" method="_on_body_entered"]
 [connection signal="body_entered" from="Node2D3/Void 2" to="Node2D3/Void 2" method="_on_body_entered"]

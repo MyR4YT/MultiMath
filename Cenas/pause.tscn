@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://boii5uhr4qtrr"]
+
+[ext_resource type="Script" uid="uid://mwwbtmrv4mx0" path="res://Scripts/UI/pause.gd" id="1_f5ubb"]
+[ext_resource type="Shader" uid="uid://cg0vg3hv1awxg" path="res://Shaders/poster.gdshader" id="1_gwsuh"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="3_2oak6"]
+[ext_resource type="Texture2D" uid="uid://coor2r0wj2bt3" path="res://Assets/UI/folhas_brancas.png" id="3_aslkp"]
+[ext_resource type="Texture2D" uid="uid://c6i8dn124pyex" path="res://Assets/UI/AOOOO_POTENCIA.png" id="3_lbwro"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oq4cf"]
+shader = ExtResource("1_gwsuh")
+
+[sub_resource type="Animation" id="Animation_lbwro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f5ubb"]
+resource_name = "despausar"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_aslkp"]
+resource_name = "revelar_pausa"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_70bul"]
+_data = {
+&"RESET": SubResource("Animation_lbwro"),
+&"despausar": SubResource("Animation_f5ubb"),
+&"revelar_pausa": SubResource("Animation_aslkp")
+}
+
+[node name="Pause" type="Control" unique_id=1705199547]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5ubb")
+metadata/_edit_vertical_guides_ = [233.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=839176177]
+material = SubResource("ShaderMaterial_oq4cf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="." unique_id=304591215]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -640.0
+offset_right = -600.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Parallax2D2" type="Parallax2D" parent="Control" unique_id=1110434724]
+scroll_offset = Vector2(-274, -164)
+repeat_size = Vector2(0, 800)
+autoscroll = Vector2(0, 150)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Parallax2D2" unique_id=1048501550]
+position = Vector2(990, 340)
+rotation = 1.5707964
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_aslkp")
+
+[node name="Parallax2D" type="Parallax2D" parent="Control" unique_id=631606398]
+scroll_offset = Vector2(-274, -164)
+repeat_size = Vector2(0, 800)
+autoscroll = Vector2(0, 150)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Parallax2D" unique_id=699352821]
+position = Vector2(840, 340)
+rotation = 1.5707964
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_lbwro")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=970004831]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_70bul")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1375938260]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 90.0
+offset_right = 600.0
+offset_bottom = 130.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1306704063]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2oak6")
+theme_override_font_sizes/font_size = 32
+text = "Continuar"
+
+[node name="Reiniciar" type="Button" parent="Control/VBoxContainer" unique_id=479411230]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2oak6")
+theme_override_font_sizes/font_size = 32
+text = "Reiniciar"
+
+[node name="Sair" type="Button" parent="Control/VBoxContainer" unique_id=13736134]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2oak6")
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[node name="Name" type="Label" parent="Control" unique_id=2050255692]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 25.0
+offset_right = 585.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("3_2oak6")
+theme_override_font_sizes/font_size = 48
+text = "Pause"
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

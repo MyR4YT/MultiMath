@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bsaseeho83xpq"]
+
+[ext_resource type="Script" uid="uid://dayycmq0m5osp" path="res://Scripts/ball_spawner.gd" id="1_hx2fe"]
+[ext_resource type="Texture2D" uid="uid://bjytlcoghe4wc" path="res://Assets/spawnerball.png" id="1_mqrr0"]
+[ext_resource type="PackedScene" uid="uid://bxbmn0xcp6t3m" path="res://Objetos/ball.tscn" id="2_0mwc8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq4cf"]
+size = Vector2(32, 8)
+
+[node name="BallSpawner" type="StaticBody2D" unique_id=1122285613]
+scale = Vector2(10, 10)
+script = ExtResource("1_hx2fe")
+ball = ExtResource("2_0mwc8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1535236312]
+texture = ExtResource("1_mqrr0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010633678]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_oq4cf")
+disabled = true

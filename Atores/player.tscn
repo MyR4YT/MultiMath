@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd1cmjha32nnn" path="res://Scripts/player.gd" id="1_wulyv"]
 [ext_resource type="Texture2D" uid="uid://1yoyr2ey7xjn" path="res://Assets/player.png" id="2_w75uk"]
+[ext_resource type="AudioStream" uid="uid://cv7o4bsaavfc1" path="res://Songs/freesound_gamestudio-bar-increase-cartoon-funny-jump-384919.mp3" id="3_p28w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(10, 19)
@@ -149,3 +150,7 @@ initial_velocity_min = 10.0
 initial_velocity_max = 10.0
 scale_amount_min = 2.5
 scale_amount_max = 2.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1071742548]
+stream = ExtResource("3_p28w2")
+volume_db = -10.0

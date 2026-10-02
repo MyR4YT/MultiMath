@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bwmdplv7it624"]
 
-[ext_resource type="Texture2D" uid="uid://clmf12buip08q" path="res://Assets/UI/LevelInd.png" id="1_pur2k"]
 [ext_resource type="Script" uid="uid://d08n0ubm8fx8" path="res://Scripts/ui.gd" id="1_vdm18"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_v7b1f"]
 [ext_resource type="Texture2D" uid="uid://bp3i5cqwg4lc3" path="res://Assets/Coin.png" id="4_mm5bc"]
@@ -57,20 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vdm18")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=49848530]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -19.999939
-offset_top = -19.999998
-offset_right = 20.000061
-offset_bottom = 20.000002
-grow_horizontal = 2
-scale = Vector2(2.5, 2.5)
-pivot_offset = Vector2(20, 0)
-texture = ExtResource("1_pur2k")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=570307010]
 layout_mode = 0
 offset_right = 235.0
@@ -94,9 +79,9 @@ text = "2"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1975864588]
 layout_mode = 0
-offset_left = 1063.0
+offset_left = 1023.0
 offset_top = 1.0
-offset_right = 1298.0
+offset_right = 1258.0
 offset_bottom = 136.0
 theme_override_fonts/normal_font = ExtResource("2_v7b1f")
 theme_override_font_sizes/normal_font_size = 32
@@ -104,7 +89,7 @@ text = "Coins: 0"
 scroll_active = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110321321]
-position = Vector2(1045, 17)
+position = Vector2(1005, 17)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o4md1")
 autoplay = "default"

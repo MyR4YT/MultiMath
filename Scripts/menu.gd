@@ -18,7 +18,8 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_accept"):
 		if item == 1:
 			get_tree().change_scene_to_file("res://Cenas/Fase 1-2.tscn")
-
+		elif item == 3:
+			get_tree().quit()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if item == 1:
@@ -33,3 +34,11 @@ func _process(delta: float) -> void:
 		$Play3.text = "[wave][color=blue]Exit"
 		$Play.text = "Play"
 		$Play2.text = "Options"
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/Fase 1-2.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().quit()

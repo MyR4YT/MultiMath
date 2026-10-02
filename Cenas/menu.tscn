@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://rhv410y6yum0" path="res://Shaders/background.gdshader" id="1_pveh2"]
 [ext_resource type="Script" uid="uid://bimfvcnjx2tdi" path="res://Scripts/menu.gd" id="1_vpgfy"]
 [ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="2_u1n12"]
+[ext_resource type="AudioStream" uid="uid://dmafmvrv3rjub" path="res://Songs/WhatsApp Audio 2026-09-18 at 10.53.33.mp3" id="4_eheat"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebum8"]
 shader = ExtResource("1_pveh2")
@@ -51,6 +52,31 @@ bbcode_enabled = true
 text = "[wave]Play"
 scroll_active = false
 
+[node name="Button" type="Button" parent="Play" unique_id=1641341354]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 56.0
+flat = true
+
+[node name="Play5" type="RichTextLabel" parent="." unique_id=1399894477]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 624.0
+offset_top = -276.0
+offset_right = 1088.0
+offset_bottom = -172.0
+grow_vertical = 2
+theme_override_constants/outline_size = 18
+theme_override_fonts/normal_font = ExtResource("2_u1n12")
+theme_override_font_sizes/normal_font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ebum8")
+bbcode_enabled = true
+text = "[wave]MultiMath"
+scroll_active = false
+
 [node name="Play2" type="RichTextLabel" parent="." unique_id=378069978]
 layout_mode = 1
 anchors_preset = 4
@@ -87,6 +113,13 @@ bbcode_enabled = true
 text = "Exit"
 scroll_active = false
 
+[node name="Button2" type="Button" parent="Play3" unique_id=1131461650]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 56.0
+flat = true
+
 [node name="Play4" type="RichTextLabel" parent="." unique_id=1882421740]
 layout_mode = 1
 anchors_preset = 7
@@ -108,3 +141,10 @@ text = "Feito por
 [wave]Tulio e Victor"
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2025264377]
+stream = ExtResource("4_eheat")
+autoplay = true
+
+[connection signal="pressed" from="Play/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Play3/Button2" to="." method="_on_button_2_pressed"]

@@ -26,4 +26,17 @@ func die(valor) -> void:
 	transition2.show()
 	transition.play("fade_out")
 	await transition.animation_finished
-	GameManager.dead(player.global_position, marker_2d.global_position)
+	if Global.active == 1:
+		GameManager.dead(player.global_position, $Marker2D.global_position)
+	elif Global.active == 2:
+		GameManager.dead(player.global_position, $"../Void 2/Marker2D".global_position)
+	elif Global.active == 3:
+		GameManager.dead(player.global_position, $"../Void 3/Marker2D".global_position)
+	elif Global.active == 4:
+		GameManager.dead(player.global_position, $"../Void 4/Marker2D".global_position)
+	elif Global.active == 5:
+		GameManager.dead(player.global_position, $"../Void 5/Marker2D".global_position)
+	elif Global.active == 6:
+		GameManager.dead(player.global_position, $"../Void 6/Marker2D".global_position)
+	elif Global.active == 7:
+		GameManager.dead(player.global_position, $"../Void 7/Marker2D".global_position)

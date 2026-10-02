@@ -3,6 +3,7 @@ extends Node
 signal death_alterada(valor)
 
 var coins = 0
+var macas = 0
 var active = 0
 var death = false:
 	set(valor):

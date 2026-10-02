@@ -48,6 +48,8 @@ func _physics_process(delta: float) -> void:
 			apply_squash_stretch(Vector2(0.7, 1.3))
 			coyote_counter = 0.0
 			air = 1
+			$AudioStreamPlayer.pitch_scale = randf_range(0.9, 1.1)
+			$AudioStreamPlayer.playing = true
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

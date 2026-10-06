@@ -24,18 +24,8 @@ func _physics_process(delta: float) -> void:
 	if history.size() > frame_target:
 		var target_position = history[frame_target]
 		
-		if is_transicionando:
-			# Se acabou de coletar, vai até a posição usando LERP suavemente
-			# Multiplicamos por delta para a velocidade ser constante independente do lag
-			global_position = global_position.lerp(target_position, follow_speed * delta)
-			
-			# Se o clone já estiver muito perto do alvo (ex: menos de 5 pixels), 
-			# encerra a transição para ele travar na fila perfeitamente
-			if global_position.distance_to(target_position) < 5.0:
-				is_transicionando = false
-		else:
-			# Movimento rígido padrão da fila
-			global_position = target_position
+		# Mantém o lerp contínuo para o movimento ser sempre suave
+		global_position = global_position.lerp(target_position, follow_speed * delta)
 
 
 func _on_body_entered(body: Node2D) -> void:

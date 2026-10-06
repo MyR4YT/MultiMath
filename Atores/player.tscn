@@ -126,6 +126,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=1653144747]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_wulyv")
+delay_frames = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2082631993]
 position = Vector2(0, 6.5)

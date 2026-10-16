@@ -6,7 +6,6 @@ extends Control
 @onready var bar: Sprite2D = $Control/Parallax2D/Sprite2D
 @onready var bar2: Sprite2D = $Control/Parallax2D2/Sprite2D
 @onready var pause: Label = $Control/Name
-@onready var achivements: TextureRect = $Control/Conquistas
 
 func _ready() -> void:
 	hide()
@@ -63,12 +62,3 @@ func _on_sair_pressed() -> void:
 
 func _on_reiniciar_pressed() -> void:
 	toggle_pause()
-	
-func _on_achivements_pressed() -> void:
-	var tween: Tween = create_tween()
-	tween.tween_property(achivements, "position:y", 116, 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-
-
-func _on_texture_button_pressed() -> void:
-	var tween: Tween = create_tween()
-	tween.tween_property(achivements, "position:y", 500, 0.8).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)

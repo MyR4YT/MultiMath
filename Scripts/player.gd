@@ -11,6 +11,17 @@ var clones = []
 @onready var anim = $AnimatedSprite2D
 @onready var particles = $CPUParticles2D
 
+# ───────── DASH (8 direções, custa 1 clone) ─────────
+@export var dash_habilitado: bool = false   # PRECISA estar true pra habilidade funcionar
+@export var dash_forca: float = 1400.0
+@export var dash_duracao: float = 0.15
+@export var dash_cooldown: float = 0.4
+
+var dashando: bool = false
+var dash_direcao: Vector2 = Vector2.ZERO
+var _dash_tempo: float = 0.0
+var _dash_cd: float = 0.0
+
 var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var wall_grabbing = false

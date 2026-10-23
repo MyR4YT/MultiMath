@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 # Lista com os caminhos das suas músicas
 var playlist: Array[String] = [
-	"res://Songs/WhatsApp-Audio-2026-09-01-at-09.09.40.mp3"
+	"res://Songs/Backrooms.mp3"
 ]
 
 # Variável para controlar qual música está tocando agora

@@ -23,7 +23,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and not body.clones.is_empty() and cu:
+	if body.name == "Player" and cu:
+		if body.clones.is_empty() == true:
+			addnum(body)
+			pass
 		cu = false
 		for i in body.clones:
 			# Passamos a referência do player para poder matar caso passe da contagem
@@ -44,7 +47,8 @@ func addnum(player: Node2D) -> bool:
 	var tween = create_tween()
 	var pos = $Label2.position.y
 	tween.tween_property($"Label2", "position:y", pos - 10, 0.1)
-	numbers += 1
+	if player.clones.is_empty() == false:
+		numbers += 1
 	$"Label2".text = _montar_equacao()
 	tween.tween_property($"Label2", "position:y", pos, 0.1)
 	

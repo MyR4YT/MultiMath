@@ -7,6 +7,8 @@ extends Control
 @onready var bar2: Sprite2D = $Control/Parallax2D2/Sprite2D
 @onready var pause: Label = $Control/Name
 
+var item = 1
+
 func _ready() -> void:
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -18,7 +20,39 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		toggle_pause()
+		
+	if get_tree().paused == true:
+		if event.is_action_pressed("ui_down"):
+			item += 1
+			item = clamp(item, 1, 3)
+			
+		elif event.is_action_pressed("ui_up"):
+			item -= 1
+			item = clamp(item, 1, 3)
+			
+		elif event.is_action_pressed("ui_accept"):
+			if item == 1:
+				toggle_pause()
+			elif item == 2:
+				toggle_pause()
+				$"../../Node2D3/Void 1".die(true)
+			elif item == 3:
+				toggle_pause()
+				get_tree().change_scene_to_file("res://Cenas/menu.tscn")
 
+func _process(delta: float) -> void:
+	if item == 1:
+		$Control/VBoxContainer/Button.flat = false
+		$Control/VBoxContainer/Reiniciar.flat = true
+		$Control/VBoxContainer/Sair.flat = true
+	elif item == 2:
+		$Control/VBoxContainer/Reiniciar.flat = false
+		$Control/VBoxContainer/Sair.flat = true
+		$Control/VBoxContainer/Button.flat = true
+	elif item == 3:
+		$Control/VBoxContainer/Sair.flat = false
+		$Control/VBoxContainer/Reiniciar.flat = true
+		$Control/VBoxContainer/Button.flat = true
 func toggle_pause() -> void:
 	get_tree().paused = !get_tree().paused
 	

@@ -40,3 +40,5 @@ func die(valor) -> void:
 		GameManager.dead(player.global_position, $"../Void 6/Marker2D".global_position)
 	elif Global.active == 7:
 		GameManager.dead(player.global_position, $"../Void 7/Marker2D".global_position)
+	else:
+		GameManager.dead(player.global_position, $Marker2D.global_position)

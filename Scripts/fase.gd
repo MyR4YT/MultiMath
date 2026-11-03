@@ -32,7 +32,7 @@ func _ready() -> void:
 	randomize()
 	
 func _process(delta: float) -> void:
-	if $Player.global_position.x > 5760 and round_started == false:
+	if $Player.global_position.x > 13848 and round_started == false:
 		round_started = true
 		start_round()
 

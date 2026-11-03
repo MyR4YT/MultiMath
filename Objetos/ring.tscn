@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://b2txjgckt6bxc"]
+
+[ext_resource type="Script" uid="uid://gnl2g664yf61" path="res://Scripts/ring.gd" id="1_8usiq"]
+[ext_resource type="Texture2D" uid="uid://xog0bn4r5yks" path="res://Assets/Sprite-0001-sheet.png" id="2_y27f8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yifpg"]
+atlas = ExtResource("2_y27f8")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebum8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yifpg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+
+[node name="Ring" type="Node2D" unique_id=518353483]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_8usiq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2140257979]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1628836887]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1791658152]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=146132659]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2" unique_id=144880836]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=573205430]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=2110066559]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D3" unique_id=1059603053]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1903520158]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=1333855583]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D4" unique_id=710376489]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=257642137]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=880266145]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D5" unique_id=574405674]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=130695373]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=1483285392]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D6" unique_id=1264267990]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1298462281]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D7" type="Area2D" parent="." unique_id=1193561643]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D7" unique_id=1683536504]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=1154903221]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D8" type="Area2D" parent="." unique_id=1720184070]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D8" unique_id=2035107970]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1847229953]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Area2D9" type="Area2D" parent="." unique_id=801198338]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D9" unique_id=512372289]
+sprite_frames = SubResource("SpriteFrames_ebum8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9" unique_id=1112418820]
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=850203597]
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=11194421]

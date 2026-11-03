@@ -63,7 +63,7 @@ offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("2_v7b1f")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-text = "[rainbow sat=10 val=1]Speed:"
+text = "[wave]Speed:"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RichTextLabel" unique_id=1296865369]
@@ -94,3 +94,13 @@ position = Vector2(1005, 17)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_o4md1")
 autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=766862793]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

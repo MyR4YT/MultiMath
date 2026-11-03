@@ -24,3 +24,12 @@ func _process(delta: float) -> void:
 		text.text = ""
 		
 	$RichTextLabel2.text = "Coins: " + str(Global.coins)
+	
+func backrooms():
+	$ColorRect.show()
+	$"../ColorRect".show()
+	await get_tree().create_timer(1.0).timeout
+	var tween = create_tween()
+	tween.tween_property($ColorRect, "self_modulate:a", 0, 3)
+	await tween.finished
+	$ColorRect.hide()

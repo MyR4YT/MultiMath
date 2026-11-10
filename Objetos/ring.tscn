@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gnl2g664yf61" path="res://Scripts/ring.gd" id="1_8usiq"]
 [ext_resource type="Texture2D" uid="uid://xog0bn4r5yks" path="res://Assets/Sprite-0001-sheet.png" id="2_y27f8"]
+[ext_resource type="Script" uid="uid://58wye8jvfst3" path="res://Scripts/ring-enemy.gd" id="2_yifpg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yifpg"]
 atlas = ExtResource("2_y27f8")
@@ -25,6 +26,7 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_8usiq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2140257979]
+script = ExtResource("2_yifpg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=1628836887]
 sprite_frames = SubResource("SpriteFrames_ebum8")
@@ -32,70 +34,78 @@ sprite_frames = SubResource("SpriteFrames_ebum8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1791658152]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=146132659]
+[node name="Area2D2" type="Area2D" parent="." unique_id=126726985]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2" unique_id=144880836]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D2" unique_id=893597722]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=573205430]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=677697595]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=2110066559]
+[node name="Area2D3" type="Area2D" parent="." unique_id=220464046]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D3" unique_id=1059603053]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D3" unique_id=1481625532]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1903520158]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1418092832]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D4" type="Area2D" parent="." unique_id=1333855583]
+[node name="Area2D4" type="Area2D" parent="." unique_id=878299468]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D4" unique_id=710376489]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D4" unique_id=1238523522]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=257642137]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=2133513756]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D5" type="Area2D" parent="." unique_id=880266145]
+[node name="Area2D5" type="Area2D" parent="." unique_id=1469331210]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D5" unique_id=574405674]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D5" unique_id=443167939]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=130695373]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1693355702]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D6" type="Area2D" parent="." unique_id=1483285392]
+[node name="Area2D6" type="Area2D" parent="." unique_id=979320563]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D6" unique_id=1264267990]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D6" unique_id=1632164807]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1298462281]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=373491399]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D7" type="Area2D" parent="." unique_id=1193561643]
+[node name="Area2D7" type="Area2D" parent="." unique_id=392882886]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D7" unique_id=1683536504]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D7" unique_id=2083315696]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=1154903221]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=1146372161]
 shape = SubResource("RectangleShape2D_ebum8")
 
-[node name="Area2D8" type="Area2D" parent="." unique_id=1720184070]
+[node name="Area2D8" type="Area2D" parent="." unique_id=1595914783]
+script = ExtResource("2_yifpg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D8" unique_id=2035107970]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D8" unique_id=144950999]
 sprite_frames = SubResource("SpriteFrames_ebum8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1847229953]
-shape = SubResource("RectangleShape2D_ebum8")
-
-[node name="Area2D9" type="Area2D" parent="." unique_id=801198338]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D9" unique_id=512372289]
-sprite_frames = SubResource("SpriteFrames_ebum8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9" unique_id=1112418820]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1292899820]
 shape = SubResource("RectangleShape2D_ebum8")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=850203597]
 
 [node name="Marker2D2" type="Marker2D" parent="." unique_id=11194421]
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D7" to="Area2D7" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D8" to="Area2D8" method="_on_body_entered"]

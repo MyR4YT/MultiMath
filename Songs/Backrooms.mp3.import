@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Backrooms.mp3-4787393c85ffc67e2832961556a480e
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

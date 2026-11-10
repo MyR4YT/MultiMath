@@ -1,14 +1,14 @@
 extends Node
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func dead(body, pos) -> void:
-	get_tree().reload_current_scene()
-	Global.active -= 1
+	# Adia o recarregamento da cena para o final do frame, fora do ciclo de física
+	get_tree().call_deferred("reload_current_scene")
+	Global.active -= 0
+	print(str(Global.active) + "test")
 	Global.body = pos

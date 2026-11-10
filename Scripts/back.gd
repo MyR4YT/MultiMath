@@ -14,3 +14,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		$"../CanvasLayer/UI".backrooms()
 		$"../Player".global_position = Vector2(5952, 576)
+		$"../AudioStreamPlayer".backrooms()

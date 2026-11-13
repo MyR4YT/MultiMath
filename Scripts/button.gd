@@ -123,9 +123,9 @@ func _valor_esperado() -> int:
 func _montar_equacao() -> String:
 	match faltante:
 		Faltante.PRIMEIRO:
-			return "? " + _simbolo() + " " + str(num2) + " = " + str(num1)
+			return str(numbers) + " " + _simbolo() + " " + str(num2) + " = " + str(num1)
 		Faltante.SEGUNDO:
-			return str(num1) + " " + _simbolo() + " ? = " + str(num2)
+			return str(num1) + " " + _simbolo() + " " + str(numbers) + " = " + str(num2)
 		Faltante.RESULTADO:
-			return str(num1) + " " + _simbolo() + " " + str(num2) + " = ?"
+			return str(num1) + " " + _simbolo() + " " + str(num2) + " = " + str(numbers)
 	return "?"

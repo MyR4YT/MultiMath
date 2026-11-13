@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cedomljl7bcd5"]
+
+[ext_resource type="Script" uid="uid://b0xovy3ajnb12" path="res://Scripts/history.gd" id="1_eygeq"]
+[ext_resource type="FontFile" uid="uid://bkuhenx5qxyh4" path="res://Fonts/DustySix.ttf" id="1_uu7wv"]
+
+[node name="Control" type="Control" unique_id=1964604123]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eygeq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1740039620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -28.0
+offset_right = 352.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_uu7wv")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "ngngsggnings"
+scroll_active = false
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
